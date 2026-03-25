@@ -16,4 +16,8 @@ export class Parametrizacao {
     { nome: 'Sábado', checked: false, horaInicio: '', horaFim: '' },
     { nome: 'Domingo', checked: false, horaInicio: '', horaFim: '' }
   ];
+
+  salvarDados(){
+    console.log('Clicou aqui!');
+  }
 }

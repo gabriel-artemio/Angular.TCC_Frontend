@@ -1,82 +1,100 @@
-<div class="container mt-4">
+<h3 class="title">Configurações</h3>
 
-  <h3>Configurações</h3>
+<!-- TABS -->
+<ul class="nav nav-tabs">
 
-  <!-- TABS -->
-  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#aba1">
+      Dias e Horários
+    </button>
+  </li>
 
-    <li class="nav-item">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#aba1">
-        Dias e Horários
-      </button>
-    </li>
+  <li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#aba2">
+      Outras Configurações
+    </button>
+  </li>
 
-    <li class="nav-item">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#aba2">
-        Outras Configurações
-      </button>
-    </li>
+</ul>
 
-  </ul>
+<!-- CONTEÚDO -->
+<div class="tab-content mt-3">
 
-  <!-- CONTEÚDO -->
-  <div class="tab-content mt-3">
+  <!-- ABA 1 -->
+  <div class="tab-pane fade show active" id="aba1">
+    <div class="card p-3">
 
-    <!-- ABA 1 -->
-    <div class="tab-pane fade show active" id="aba1">
-      <div class="card p-3">
+      <div class="row fw-bold border-bottom pb-2 mb-2">
+        <div class="col-md-3">Dia</div>
+        <div class="col-md-3">Ativo</div>
+        <div class="col-md-3">Hora Inicial</div>
+        <div class="col-md-3">Hora Final</div>
+      </div>
 
-        <div class="row fw-bold border-bottom pb-2 mb-2">
-          <div class="col-md-3">Dia</div>
-          <div class="col-md-3">Ativo</div>
-          <div class="col-md-3">Hora Inicial</div>
-          <div class="col-md-3">Hora Final</div>
+      <div class="row align-items-center mb-2" *ngFor="let dia of diasSemana">
+
+        <div class="col-md-3">
+          {{dia.nome}}
         </div>
 
-        <div class="row align-items-center mb-2" *ngFor="let dia of diasSemana">
+        <div class="col-md-3">
+          <input type="checkbox" [(ngModel)]="dia.checked">
+        </div>
 
-          <div class="col-md-3">
-            {{dia.nome}}
-          </div>
+        <div class="col-md-3">
+          <input type="time" class="form-control" [(ngModel)]="dia.horaInicio" [disabled]="!dia.checked">
+        </div>
 
-          <div class="col-md-3">
-            <input type="checkbox" [(ngModel)]="dia.checked">
-          </div>
-
-          <div class="col-md-3">
-            <input type="time"
-              class="form-control"
-              [(ngModel)]="dia.horaInicio"
-              [disabled]="!dia.checked">
-          </div>
-
-          <div class="col-md-3">
-            <input type="time"
-              class="form-control"
-              [(ngModel)]="dia.horaFim"
-              [disabled]="!dia.checked">
-          </div>
+        <div class="col-md-3">
+          <input type="time" class="form-control" [(ngModel)]="dia.horaFim" [disabled]="!dia.checked">
         </div>
       </div>
     </div>
-    
-    <!-- ABA 2 -->
-    <div class="tab-pane fade" id="aba2">
-      <div class="card p-3">
-
-        <h5>Outras Configurações</h5>
-
-        <div class="mb-3">
-          <label>Nome da Configuração</label>
-          <input class="form-control">
-        </div>
-
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input">
-          <label class="form-check-label">Ativo</label>
-        </div>
-      </div>
-    </div>
-
+    <button class="btn btn-success mt-2" (click)="salvarDados()">
+      <i class="bi bi-save-fill"></i> Atualizar Datas
+    </button>
   </div>
+
+  <!-- ABA 2 -->
+  <div class="tab-pane fade" id="aba2">
+    <div class="card p-3">
+
+      <h5>Outras Configurações</h5>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nome Configuração 1</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button class="btn btn-outline-success" type="button" id="button-addon1">
+          <i class="bi bi-save-fill"></i> Salvar
+        </button>
+        <button class="btn btn-outline-danger" type="button" id="button-addon1">
+          <i class="bi bi-trash-fill"></i> Excluir
+        </button>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nome Configuração 2</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button class="btn btn-outline-success" type="button" id="button-addon1">
+          <i class="bi bi-save-fill"></i> Salvar
+        </button>
+        <button class="btn btn-outline-danger" type="button" id="button-addon1">
+          <i class="bi bi-trash-fill"></i> Excluir
+        </button>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nome Configuração 3</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button class="btn btn-outline-success" type="button" id="button-addon1">
+          <i class="bi bi-save-fill"></i> Salvar
+        </button>
+        <button class="btn btn-outline-danger" type="button" id="button-addon1">
+          <i class="bi bi-trash-fill"></i> Excluir
+        </button>
+      </div>
+    </div>
+  </div>
+
 </div>
+

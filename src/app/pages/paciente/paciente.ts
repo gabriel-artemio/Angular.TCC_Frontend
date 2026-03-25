@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './paciente.css',
 })
 export class Paciente {
+  buscarPaciente(){
+    console.log('Clicou aqui!');
+  }
 }
