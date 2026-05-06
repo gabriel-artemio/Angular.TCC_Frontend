@@ -1,0 +1,12 @@
+.bg-layout{
+    background-color: #3f0064;
+    color: #fff;
+}
+
+.sidebar-heading{
+    font-weight: bold;
+}
+
+a{
+    list-style: none;
+}
