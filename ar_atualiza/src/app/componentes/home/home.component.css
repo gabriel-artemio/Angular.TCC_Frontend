@@ -54,3 +54,9 @@ i{
 .card-header{
     font-weight: bold;
 }
+
+.btn-custom{
+    background-color: #3f0064;
+    color: #fff;
+    font-weight: bold;
+}
